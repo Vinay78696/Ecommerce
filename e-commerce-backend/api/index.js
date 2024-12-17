@@ -1,4 +1,3 @@
-const PORT = 3000;
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -13,6 +12,7 @@ dotenv.config();
 app.use(express.json());
 app.use(cors());
 
+const PORT = process.env.PORT || 4000;
 const MONGO_URL = process.env.MONGO_URL || "Your mongo connection String";
 const secret_admin_key = process.env.JWT_SECRET || "Your secret key";
 const BACKEND_URL = process.env.BACKEND_URL || "http://localhost:4000";
