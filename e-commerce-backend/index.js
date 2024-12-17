@@ -375,7 +375,7 @@ app.use(express.json());
 app.use(cors());
 
 const MONGO_URL = process.env.MONGO_URL || "Your mongo connection String";
-
+const JWT_SECRET = process.env.JWT_SECRET || "Your secret key"
 // Database Connection With MongoDB
 mongoose.connect(MONGO_URL);
 
@@ -386,7 +386,7 @@ const storage = multer.diskStorage({
     console.log(file);
     return cb(
       null,
-      ${file.fieldname}_${Date.now()}${path.extname(file.originalname)}
+      `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`
     );
   },
 });
@@ -395,7 +395,7 @@ const upload = multer({ storage: storage });
 app.post("/upload", upload.single("product"), (req, res) => {
   res.json({
     success: 1,
-    image_url: http://localhost:4000/images/${req.file.filename},
+    image_url: `http://localhost:4000/images/${req.file.filename}`,
   });
 });
 app.use("/images", express.static("upload/images"));
@@ -511,7 +511,7 @@ app.post("/login", async (req, res) => {
       console.log(user.id);
 
       // Generate token
-      const token = jwt.sign(data, "secret_admin_key", { expiresIn: "1h" });
+      const token = jwt.sign(data, secret_admin_key, { expiresIn: "1h" });
       res.json({ success, token });
     } else {
       return res.status(400).json({
@@ -562,7 +562,7 @@ app.post("/signup", async (req, res) => {
       id: user.id,
     },
   };
-  const token = jwt.sign(data, "secret_admin_key", { expiresIn: "1h" });
+  const token = jwt.sign(data, secret_admin_key, { expiresIn: "1h" });
   success = true;
   res.json({ success, token });
 });
@@ -595,7 +595,7 @@ app.post("/admin/signup", async (req, res) => {
 
     // Generate JWT token
     const data = { admin: { id: admin.id } };
-    const token = jwt.sign(data, "secret_admin_key", { expiresIn: "1h" });
+    const token = jwt.sign(data, secret_admin_key, { expiresIn: "1h" });
 
     success = true;
     res.json({ success, token });
@@ -629,7 +629,7 @@ app.post("/admin/login", async (req, res) => {
 
     // Generate JWT token
     const data = { admin: { id: admin.id } };
-    const token = jwt.sign(data, "secret_admin_key", { expiresIn: "1h" });
+    const token = jwt.sign(data, secret_admin_key, { expiresIn: "1h" });
 
     success = true;
     res.json({ success, token });
