@@ -1,0 +1,123 @@
+/* Popular Section */
+.popular {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Increased spacing between elements */
+    height: auto; /* Let the content decide height */
+    padding: 50px 20px; /* Added padding for spacing around the section */
+    margin: 200px 0; /* Added margin-top for space from upper sections */
+    box-sizing: border-box; /* Ensure padding doesn’t affect width */
+  }
+  
+  .popular h1 {
+    color: #171717;
+    font-size: 50px;
+    font-weight: 600;
+    margin: 0;
+    text-align: center; /* Center-align text for smaller screens */
+  }
+  
+  .popular hr {
+    width: 200px;
+    height: 6px;
+    border-radius: 10px;
+    background: #252525;
+    margin: 10px 0; /* Added margin for spacing */
+  }
+  
+  .popular-item {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap; /* Ensure items wrap on smaller screens */
+    gap: 30px;
+    justify-content: center; /* Center items */
+  }
+  
+  @media (max-width: 1280px) {
+    .popular {
+      padding: 40px 20px;
+      margin: 80px 0; /* Ensure there is enough space from the previous section */
+    }
+  
+    .popular h1 {
+      font-size: 40px;
+    }
+  
+    .popular hr {
+      width: 160px;
+      height: 4px;
+    }
+  
+    .popular-item {
+      gap: 20px;
+      margin-top: 30px;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .popular {
+      padding: 30px 15px;
+      margin: 70px 0; /* Added margin-top to ensure spacing from above */
+    }
+  
+    .popular h1 {
+      font-size: 30px;
+    }
+  
+    .popular hr {
+      width: 120px;
+      height: 3px;
+    }
+  
+    .popular-item {
+      gap: 15px;
+      margin-top: 20px;
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .popular {
+      padding: 20px 10px;
+      margin: 60px 0; /* Added margin-top for spacing */
+    }
+  
+    .popular h1 {
+      font-size: 24px;
+    }
+  
+    .popular hr {
+      width: 100px;
+      height: 3px;
+    }
+  
+    .popular-item {
+      gap: 10px;
+      margin-top: 20px;
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .popular {
+      padding: 20px 10px;
+      margin: 50px 0; /* Adjusted margin-top for small screens */
+    }
+  
+    .popular h1 {
+      font-size: 20px;
+    }
+  
+    .popular hr {
+      width: 80px;
+      height: 2px;
+    }
+  
+    .popular-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 20px;
+    }
+  }
+  

@@ -1,0 +1,163 @@
+
+/* Footer Section */
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 20px; /* Added padding for spacing */
+  box-sizing: border-box; /* Include padding in width calculations */
+  background-color: #f8f8f8; /* Optional: Add a subtle background for better visibility */
+  margin-top: 250px;
+}
+
+/* Footer Logo */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-logo p {
+  color: #383838;
+  font-size: 46px;
+  font-weight: 700;
+}
+
+/* Footer Links */
+.footer-links {
+  display: flex;
+  list-style: none;
+  gap: 50px;
+  color: #252525;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  cursor: pointer;
+  transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.footer-links li:hover {
+  color: #ff4141; /* Optional: Change color on hover */
+}
+
+/* Footer Social Icons */
+.footer-social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-icons-container {
+  padding: 10px;
+  padding-bottom: 6px;
+  background: #fbfbfb;
+  border: 1px solid #ebebeb;
+  border-radius: 8px; /* Slightly rounded corners */
+}
+
+/* Footer Copyright */
+.footer-copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  margin-bottom: 30px;
+  color: #1a1a1a;
+  font-size: 20px;
+  text-align: center; /* Center-align text for better readability */
+}
+
+.footer div hr {
+  width: 80%;
+  border: 0;
+  border-radius: 10px;
+  height: 3px;
+  background: #c7c7c7;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 800px) {
+  .footer {
+    gap: 30px;
+  }
+
+  .footer-logo {
+    gap: 10px;
+    align-items: center;
+  }
+
+  .footer-logo img {
+    width: 40px;
+  }
+
+  .footer-logo p {
+    font-size: 28px;
+  }
+
+  .footer-links {
+    font-size: 16px;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow wrapping for smaller widths */
+    justify-content: center;
+  }
+
+  .footer-social-icons img {
+    width: 24px;
+  }
+
+  .footer-copyright {
+    font-size: 14px;
+    gap: 15px;
+  }
+
+  .footer div hr {
+    width: 90%;
+  }
+}
+
+@media (max-width: 500px) {
+  .footer {
+    gap: 20px;
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+
+  .footer-logo {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .footer-logo p {
+    font-size: 22px;
+    text-align: center; /* Center-align text for smaller screens */
+  }
+
+  .footer-links {
+    font-size: 14px;
+    gap: 10px;
+    flex-direction: column; /* Stack links vertically */
+    align-items: center;
+  }
+
+  .footer-social-icons {
+    gap: 10px;
+  }
+
+  .footer-icons-container {
+    padding: 8px;
+  }
+
+  .footer-copyright {
+    font-size: 12px;
+    gap: 10px;
+  }
+
+  .footer div hr {
+    width: 100%;
+  }
+}

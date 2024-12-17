@@ -1,0 +1,257 @@
+/* .offers {
+  width: 65%;
+  height: 60vh;
+  display: flex;
+  margin: auto;
+  padding: 0px 140px;
+  margin-bottom: 150px ;
+  background: linear-gradient(180deg, #fde1ff 0%,#e1ffea22 60%);
+}
+.offers-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.offers-left h1 {
+  color: #171717;
+  font-size: 80px;
+  font-weight: 600;
+}
+.offers-left p {
+  color: #171717;
+  font-size: 22px;
+  font-weight: 500;
+}
+.offers-left button {
+  width: 282px;
+  height: 69px;
+  flex-shrink: 0;
+  border-radius: 34.5px;
+  background: #ff4141;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 30px ;
+  cursor: pointer;
+}
+.offers-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 50px;
+}
+@media(max-width:1280px){
+  .offers{
+      padding: 0px 60px;
+      margin-bottom: 80px;
+      height: 40vh;
+  }
+  .offers-left h1{
+      font-size:30px;
+  }
+  .offers-left p{
+      font-size: 16px;
+  }
+  .offers-right img{
+      width: 200px;
+  }
+  .offers-left button{
+      width: 160px;
+      height: 40px;
+      font-size: 16px;
+  }
+  .offers-right {
+      padding-top: 10px;
+  }
+}
+@media(max-width:800px){
+  .offers{
+      margin-bottom: 60px;
+  }
+  .offers-left h1{
+      font-size:22px;
+  }
+  .offers-left p{
+      font-size: 13px;
+  }
+  .offers-right img{
+      width: 180px;
+  }
+  .offers-left button{
+      width: 140px;
+      height: 30px;
+      font-size: 12px;
+  }
+}
+@media(max-width:500px){
+  .offers{
+      height: 25vh;
+      margin-bottom: 50px;
+  }
+  .offers-left h1{
+      font-size:16px;
+  }
+  .offers-left p{
+      font-size: 10px;
+  }
+  .offers-right img{
+      width: 120px;
+  }
+  .offers-left button{
+      width: 120px;
+      height: 25px;
+      font-size: 10px;
+      margin-top: 12px;
+  }
+} */
+
+
+
+/* Offers Section */
+.offers {
+  width: 90%; /* Adjust width for better responsiveness */
+  max-width: 1200px; /* Restrict maximum width */
+  display: flex;
+  margin: 50px auto; /* Add top and bottom margins */
+  padding: 20px 50px; /* Ensure consistent padding */
+  background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
+  gap: 20px; /* Add spacing between left and right */
+  box-sizing: border-box; /* Include padding in width calculations */
+  border-radius: 10px; /* Optional: Add slight border radius for aesthetics */
+}
+
+/* Left Section */
+.offers-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px; /* Add spacing between elements */
+}
+
+.offers-left h1 {
+  color: #171717;
+  font-size: 50px; /* Reduce font size for better scaling */
+  font-weight: 600;
+}
+
+.offers-left p {
+  color: #171717;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.offers-left button {
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  background: #ff4141;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.offers-left button:hover {
+  background: #e63a3a; /* Add hover effect */
+}
+
+/* Right Section */
+.offers-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.offers-right img {
+  max-width: 100%; /* Ensure image scales responsively */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain;
+}
+
+/* Media Queries */
+@media (max-width: 1280px) {
+  .offers {
+    padding: 20px 30px;
+    margin: 40px auto;
+  }
+
+  .offers-left h1 {
+    font-size: 40px;
+  }
+
+  .offers-left p {
+    font-size: 16px;
+  }
+
+  .offers-left button {
+    width: 160px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .offers-right img {
+    width: 250px;
+  }
+}
+
+@media (max-width: 800px) {
+  .offers {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    text-align: center; /* Center-align text */
+    gap: 30px; /* Add spacing between left and right */
+    padding: 20px 20px;
+  }
+
+  .offers-left h1 {
+    font-size: 28px;
+  }
+
+  .offers-left p {
+    font-size: 14px;
+  }
+
+  .offers-left button {
+    width: 140px;
+    height: 35px;
+    font-size: 14px;
+  }
+
+  .offers-right img {
+    width: 200px;
+  }
+}
+
+@media (max-width: 500px) {
+  .offers {
+    padding: 15px;
+    margin: 30px auto;
+  }
+
+  .offers-left h1 {
+    font-size: 22px;
+  }
+
+  .offers-left p {
+    font-size: 12px;
+  }
+
+  .offers-left button {
+    width: 120px;
+    height: 30px;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+
+  .offers-right img {
+    width: 150px;
+  }
+}
