@@ -1,4 +1,4 @@
-const port = 4000;
+const PORT = 3000;
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -13,16 +13,16 @@ dotenv.config();
 app.use(express.json());
 app.use(cors());
 
-const MONGO_URL = process.env.MONGO_URL || "Your mongo connection String"
-const secret_admin_key = process.env.JWT_SECRET || "Your secret key"
-const BACKEND_URL = process.env.BACKEND_URL || "http://localhost:4000"
+const MONGO_URL = process.env.MONGO_URL || "Your mongo connection String";
+const secret_admin_key = process.env.JWT_SECRET || "Your secret key";
+const BACKEND_URL = process.env.BACKEND_URL || "http://localhost:4000";
 
 // Database Connection With MongoDB
 mongoose.connect(MONGO_URL);
 
 //Image Storage Engine
 const storage = multer.diskStorage({
-  destination: "./upload/images",
+  destination: "./../upload/images",
   filename: (req, file, cb) => {
     console.log(file);
     return cb(
@@ -33,13 +33,13 @@ const storage = multer.diskStorage({
 });
 //uploasd function
 const upload = multer({ storage: storage });
-app.post("/upload", upload.single("product"), (req, res) => {
+app.post("./../upload", upload.single("product"), (req, res) => {
   res.json({
     success: 1,
     image_url: `${BACKEND_URL}/images/${req.file.filename}`,
   });
 });
-app.use("/images", express.static("upload/images"));
+app.use("/images", express.static("./../upload/images"));
 
 // MiddleWare to fetch user from database
 const fetchuser = async (req, res, next) => {
@@ -363,7 +363,7 @@ app.post("/removeproduct", async (req, res) => {
   res.json({ success: true, name: req.body.name });
 });
 
-app.listen(port, (error) => {
-  if (!error) console.log("Server Running on port " + port);
-  else console.log("Error : ", error);
-});
+app.listen(PORT, () => console.log("Server ready on port 3000."));
+
+// Export as a serverless function for Vercel
+module.exports = app;
