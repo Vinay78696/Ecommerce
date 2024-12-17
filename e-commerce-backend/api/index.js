@@ -363,7 +363,7 @@ app.post("/removeproduct", async (req, res) => {
   res.json({ success: true, name: req.body.name });
 });
 
-app.listen(PORT, () => console.log("Server ready on port 3000."));
+app.listen(PORT, () => console.log("Server ready on port ", PORT));
 
 // Export as a serverless function for Vercel
 module.exports = app;
