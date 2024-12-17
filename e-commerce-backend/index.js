@@ -375,7 +375,7 @@ app.use(express.json());
 app.use(cors());
 
 const MONGO_URL = process.env.MONGO_URL || "Your mongo connection String";
-const JWT_SECRET = process.env.JWT_SECRET || "Your secret key"
+const secret_admin_key = process.env.JWT_SECRET || "Your secret key"
 // Database Connection With MongoDB
 mongoose.connect(MONGO_URL);
 
@@ -612,7 +612,7 @@ app.post("/admin/login", async (req, res) => {
 
   try {
     // Check if the email exists
-    let admin = await adminSchema.findOne({ email: req.body.email });
+    let admin = await Admin.findOne({ email: req.body.email });
     if (!admin) {
       return res
         .status(400)
