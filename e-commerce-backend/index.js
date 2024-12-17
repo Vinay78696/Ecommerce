@@ -13,8 +13,10 @@ dotenv.config();
 app.use(express.json());
 app.use(cors());
 
-const MONGO_URL = process.env.MONGO_URL || "Your mongo connection String";
+const MONGO_URL = process.env.MONGO_URL || "Your mongo connection String"
 const secret_admin_key = process.env.JWT_SECRET || "Your secret key"
+const BACKEND_URL = process.env.BACKEND_URL || "http://localhost:4000"
+
 // Database Connection With MongoDB
 mongoose.connect(MONGO_URL);
 
@@ -34,7 +36,7 @@ const upload = multer({ storage: storage });
 app.post("/upload", upload.single("product"), (req, res) => {
   res.json({
     success: 1,
-    image_url: `http://localhost:4000/images/${req.file.filename}`,
+    image_url: `${BACKEND_URL}/images/${req.file.filename}`,
   });
 });
 app.use("/images", express.static("upload/images"));

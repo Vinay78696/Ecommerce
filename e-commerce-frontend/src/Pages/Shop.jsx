@@ -4,6 +4,7 @@ import Popular from '../Components/Popular/Popular'
 import Offers from '../Components/Offers/Offers'
 import NewCollections from '../Components/NewCollections/NewCollections'
 import NewsLetter from '../Components/NewsLetter/NewsLetter'
+import { BACKEND_URL } from '../constant'
 
 const Shop = () => {
 
@@ -11,10 +12,10 @@ const Shop = () => {
   const [newcollection, setNewCollection] = useState([]);
 
   const fetchInfo = () => { 
-    fetch('http://localhost:4000/popularinwomen') 
+    fetch(`${BACKEND_URL}/popularinwomen`) 
             .then((res) => res.json()) 
             .then((data) => setPopular(data))
-    fetch('http://localhost:4000/newcollections') 
+    fetch(`${BACKEND_URL}/newcollections`) 
             .then((res) => res.json()) 
             .then((data) => setNewCollection(data))
     }
