@@ -3,7 +3,7 @@ import "./CSS/Login.css";
 function AdminAuth() {
 async function handleAdminLogin(email, password) {
   try {
-    const response = await fetch('http://localhost:4000/admin/login', {
+    const response = await fetch(`${BACKEND_URL}/admin/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ async function handleAdminLogin(email, password) {
 
 async function handleAdminSignup(name, email, password) {
   try {
-    const response = await fetch('http://localhost:4000/admin/signup', {
+    const response = await fetch(`${BACKEND_URL}/admin/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
